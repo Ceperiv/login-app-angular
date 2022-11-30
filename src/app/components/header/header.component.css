@@ -1,0 +1,40 @@
+.tools {
+  display: flex;
+  align-items: center;
+  width: 15%;
+}
+
+.auth{
+  width: 50%;
+}
+
+.tools div {
+  padding: 0 5px;
+  transition: .3s;
+  align-items: center;
+}
+
+.tools div:hover {
+  cursor: pointer;
+  color: brown;
+  transition: .3s;
+}
+
+.active {
+  color: darkcyan;
+  font-size: large;
+}
+
+.tools div:active {
+  color: #661818;
+  font-size: small;
+  transition: .1s;
+}
+
+.tool-bar {
+  justify-content: space-between;
+}
+
+.tools .active:active {
+  font-size: large;
+}
