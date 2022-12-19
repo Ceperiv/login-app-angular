@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../../services";
+import {MatDialogRef} from "@angular/material/dialog";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-form',
@@ -8,8 +11,11 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class LoginFormComponent implements OnInit {
   form: FormGroup
+  error = false
 
-  constructor() {
+    constructor(private authService: AuthService,
+              private dialogRef: MatDialogRef<LoginFormComponent>,
+              private router: Router) {
     this._initForm()
   }
 
@@ -24,5 +30,17 @@ export class LoginFormComponent implements OnInit {
     })
   }
 
-
+  login(): void {
+    this.authService.login(this.form.value).subscribe({
+      next: () => {
+        this.error = false
+        this.router.navigate(['/cars'])
+        this.dialogRef.close()
+      },
+      error: (e) => {
+        this.error = true
+        console.log(e)
+      }
+    })
+  }
 }
