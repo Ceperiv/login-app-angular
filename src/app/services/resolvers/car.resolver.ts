@@ -17,8 +17,8 @@ export class CarResolver implements Resolve<IPaginatedData<ICar>> {
   constructor(private carService:CarService) {
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-   route:query('page')
-    return this.carService.getAll();
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IPaginatedData<ICar>> {
+   const page = route.queryParams['page'];
+    return this.carService.getAll(page);
   }
 }

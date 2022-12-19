@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe((e) => {
+    this.router.events.subscribe((e:any) => {
       if (e instanceof NavigationStart) {
         this.dialog.closeAll()
       }

@@ -26,6 +26,7 @@ import {MainInterceptor} from "./main.interceptor";
 import { CarFormComponent } from './components/car-form/car-form.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 
 @NgModule({
@@ -42,24 +43,25 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     AppsComponent,
     CarFormComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterOutlet,
-    HttpClientModule,
-    RouterLink,
-    RouterLinkActive,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    AppRoutingModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatExpansionModule,
-    MatPaginatorModule,
-  ],
+    imports: [
+        BrowserModule,
+        RouterOutlet,
+        HttpClientModule,
+        RouterLink,
+        RouterLinkActive,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        AppRoutingModule,
+        MatDialogModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatCardModule,
+        MatButtonModule,
+        MatExpansionModule,
+        MatPaginatorModule,
+        MatProgressBarModule,
+    ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     multi: true,
